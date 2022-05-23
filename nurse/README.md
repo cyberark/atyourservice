@@ -26,6 +26,9 @@ By default `nurse.py` will look for `checklist.json` in the directory it is call
 
 For security, we always advise to validate the integrity of the `checklist.json` by using the `-hash` flag with the corresponding SHA256 you may have received with it.
 
+Using Nurse, the interactive session will look like so:
+![](images/nurse_example.gif)
+
 ## Download
 
 ```
@@ -153,9 +156,6 @@ Given a `checklist.json` with the following json-formatted content:
 }
 ```
 
-Using Nurse, the interactive session will look like so:
-TODO: Insert GIF
-
 ## Writing a Checklist.json
 
 The checklist.json should consist of all the instructions required to capture the information.
@@ -167,9 +167,6 @@ It is divided into 4 top sections:
 3. `"questions"` \- specifies questions\, including follow\-up questions to ask the user
 4. `"files"` \- specifies files and directories to include in the final \.zip archive
 5. `"commands"` \- specifies commands to execute\, and to include their output in the final \.zip archive
-
-
-
 
 *For reference: "questions", "files" and "commands" will also be referred to as "actions" in this documentation.*
 
@@ -217,9 +214,6 @@ This field specifies that the date the corresponding checklist.json has been las
     * `"default"` \- specifies the default answer to suggest the user\. Additionally\, in case of using the `"--silent"` flag, this will be taken as the user's answer if it hasn't been pre-filled in the user field.
 * `"followup"` \- specifies a list of questions to be asked\, in case the parent question's `"user"` field value matches the `"condition"` field of any of the questions specified here
 * `"condition"` **(Only for follow-up questions)** \- a value which will be compared to the parent question's `"user"` field. In case of a match, the questions will be asked.
-
-
-
 
 **Example:**
 
@@ -281,9 +275,6 @@ Make sure the `"condition"` field matches the desired parent-question `"user"` r
     * `"src"` \- specifies the path which could be either a file or directory
     * `"description"` - includes additional information for the user, so they are able to improve their answer to the question. This will only be displayed upon the "--extra-info" flag.
     * `"until"` **(Optional)** \- when this field exists\, it will specify the timeframe in which files will be present\. Example: if specified "20 days ago"\, all files from 20 days ago until today will be included in the final \.zip archive\. The format is: "\<Integer\> \<Unit\> ago"\. Units include "milliseconds"\, "microseconds"\, "seconds"\, "minutes"\, "hours"\, "days"\, "months" and "years"\.
-
-
-
 
 **Example:**
 

@@ -1,0 +1,7 @@
+.venv
+.pytest_cache
+Pipfile.lock
+**/__pycache__
+**/assets
+*.html
+**/.unotes

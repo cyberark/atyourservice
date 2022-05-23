@@ -1,7 +1,7 @@
 {
     "version": "2022-02-22",
     "configuration": {
-        "directory": "<$HOME>",
+        "directory": ".",
         "prefix": "Diagnosis_",
         "defaults": {
             "priority": 100
