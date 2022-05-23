@@ -1,13 +1,3 @@
-[![release][]][github-site]
-[![license][]][license-link]
-[![downloads][]][github-site]
-
-[release]:https://img.shields.io/github/v/release/cyberark/atyourservice?color=brightgreen
-[github-site]:https://github.com/cyberark/atyourservice/releases/latest
-[license]:https://img.shields.io/github/license/cyberark/atyourservice.svg
-[license-link]:https://github.com/cyberark/atyourservice/nurse/blob/master/LICENSE.md
-[downloads]:https://img.shields.io/github/downloads/cyberark/atyourservice/total?color=brightgreen
-
 # AtYourService Project
 The atyourservice project is intended to provide highly-customizable utilities for troubleshooting issues.
 
