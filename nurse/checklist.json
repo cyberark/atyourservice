@@ -1,0 +1,86 @@
+{
+    "version": "2022-02-22",
+    "configuration": {
+        "directory": "<$HOME>",
+        "prefix": "Diagnosis_",
+        "defaults": {
+            "priority": 100
+        },
+        "begin_message": "If you need assistance, you may schedule a call to perform this step together with a representative.",
+        "end_message": "Thank you for your cooperation. Please upload the archive to your case."
+    },
+    "questions": [
+        {
+            "question": "Are you a premium member? [y/N]:",
+            "description": "Premium members receive additional support from our representatives",
+            "answer": {
+                "user": "",
+                "default": "N"
+            },
+            "followup": [
+                {
+                    "condition": "Y",
+                    "question": "Did you open an issue on our premium support platform? [Y/n]:",
+                    "answer": {
+                        "user": "",
+                        "default": "Y"
+                    },
+                    "silent": false,
+                    "followup": []
+                }
+            ]
+        },
+        {
+            "question": "What is your registered username?:",
+            "description": "We need this information to link this issue to your account",
+            "silent": false,
+            "answer": {
+                "user": "",
+                "default": ""
+            },
+            "followup": []
+        }
+    ],
+    "files": [
+        {
+            "question": "Allow us to fetch your operating system information?[Y/n]:",
+            "description": "We need this information to understand how you are running our software",
+            "answer": {
+                "user": "",
+                "default": "Y",
+                "condition": "Y"
+            },
+            "paths": [
+                {
+                    "src": "/etc/redhat-release",
+                    "description": "This path on RedHat based distributions contains the OS information"
+                },
+                {
+                    "src": "/etc/os-release",
+                    "description": "This path on Linux distributions contains the OS information"
+                }
+            ]
+        }
+    ],
+    "commands": [
+        {
+            "question": "Allow us to save the path nurse.py is running from?[Y/n]:",
+            "answer": {
+                "user": "",
+                "default": "Y",
+                "condition": "Y"
+            },
+            "paths": [
+                {
+                    "command": "pwd",
+                    "description": "This command returns in a file the path nurse.py is located when executed",
+                    "output_path": "path/created/within/final/archive/pwd_output.txt"
+                },
+                {
+                    "command": "pwd",
+                    "description": "This command returns inline the path nurse.py is located when executed"
+                }
+            ]
+        }
+    ]
+}
