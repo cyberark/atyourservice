@@ -32,7 +32,7 @@ Using Nurse, the interactive session will look like so:
 ## Download
 
 ```
-curl -sSL https://raw.githubusercontent.com/cyberark/atyourservice/nurse/nurse.py > nurse.py
+curl -sSL https://raw.githubusercontent.com/cyberark/atyourservice/main/nurse/nurse.py > nurse.py
 ```
 
 ## Compatability
