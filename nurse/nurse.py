@@ -29,22 +29,27 @@ class asciicolors:
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
-
+    @staticmethod
     def red(msg):
         return asciicolors.RED + msg + asciicolors.ENDC
 
+    @staticmethod
     def blue(msg):
         return asciicolors.BLUE + msg + asciicolors.ENDC
 
+    @staticmethod
     def cyan(msg):
         return asciicolors.CYAN + msg + asciicolors.ENDC
 
+    @staticmethod
     def green(msg):
         return asciicolors.GREEN + msg + asciicolors.ENDC
 
+    @staticmethod
     def underline(msg):
         return asciicolors.UNDERLINE + msg + asciicolors.ENDC
 
+    @staticmethod
     def warning(msg):
         return asciicolors.WARNING + msg + asciicolors.ENDC
 
