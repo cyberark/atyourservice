@@ -29,5 +29,6 @@ jobs:
         pip install pipenv
     - name: Test with pytest
       run: |
+        cd nurse
         pipenv install --dev
         pipenv run pytest --html=report.html
