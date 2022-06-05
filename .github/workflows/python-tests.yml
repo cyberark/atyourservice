@@ -30,4 +30,4 @@ jobs:
         pip install pipenv
         cd nurse
         pipenv --python ${{ matrix.python-version }} install --dev
-        pipenv --python ${{ matrix.python-version }} run pytest --html=report.html
+        pipenv run pytest --html=report.html
