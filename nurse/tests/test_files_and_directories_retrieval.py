@@ -6,6 +6,15 @@ import shutil
 import copy
 from nurse import nurse, string_to_delta
 from datetime import datetime, timedelta
+import sys
+import time
+
+if sys.version_info[0] == 2:
+    import errno
+
+    class FileExistsError(OSError):
+        def __init__(self, msg):
+            super(FileExistsError, self).__init__(errno.EEXIST, msg)
 
 class FilesystemObject(object):
     def create(self, in_path="."):
@@ -21,7 +30,7 @@ class Directory(FilesystemObject):
         
         try:
             os.mkdir(self.my_path)
-        except FileExistsError as fe:
+        except (FileExistsError, OSError) as fe:
             pass
 
         for obj in self.contains:
@@ -36,13 +45,17 @@ class File(FilesystemObject):
         self.modified_time = modified_time
 
     def create(self, in_path="."):
+        # use this instead of datetime.timestamp to support Python 2.7
+        def to_seconds(date):
+            return time.mktime(date.timetuple())
+
         self.my_path = os.path.join(in_path, self.name)
 
         with open(self.my_path, "w") as fd:
             fd.write("This is a mock file used for testing purposes.")
         
-        new_access_time = datetime.timestamp(datetime.now())
-        new_modified_time = datetime.timestamp(self.modified_time)
+        new_access_time = to_seconds(datetime.now())
+        new_modified_time = to_seconds(self.modified_time)
 
         os.utime(self.my_path, (new_access_time, new_modified_time))
     
@@ -53,7 +66,7 @@ def str_to_datetime(string):
     return datetime.today() + string_to_delta(string)
 
 def test_checklist_nested_files(mocker):
-    user_input_dict = {"Question 1" : "Y"}
+    user_input_dict = [("Question 1" , "Y")]
 
     expected_archived_paths = ["./mock_files/New1.txt",
                                "./mock_files/test_1/New2.txt",
@@ -101,7 +114,7 @@ def test_checklist_nested_files(mocker):
     Tree.delete()
 
 def test_checklist_hours_filter(mocker):
-    user_input_dict = {"Question 1" : "Y"}
+    user_input_dict = [("Question 1" , "Y")]
 
     expected_archived_paths = ["./mock_files/New1.txt"]
 
