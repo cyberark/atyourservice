@@ -40,7 +40,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install pipenv
         cd nurse
-        pipenv install --dev
+        pipenv install --python=${{ matrix.python-version }} --dev
     - name: Test with pytest
       if: steps.cache-dependencies.outputs.cache-hit != 'true'
       run: |
