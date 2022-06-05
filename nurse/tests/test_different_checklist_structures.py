@@ -13,11 +13,11 @@ def test_checklist_no_questions(mocker):
     assert mock.isSuccess()
 
 def test_checklist_numerous_followups(mocker):
-    user_input_dict = {"Question 1" : "Y",
-                       "Followup 1" : "Y", 
-                       "Followup 2" : "Y", 
-                       "Followup 3" : "Y",
-                       "Followup of Followup 3" : "Y"}
+    user_input_dict = [("Question 1" , "Y"),
+                       ("Followup 1" , "Y"), 
+                       ("Followup 2" , "Y"), 
+                       ("Followup 3" , "Y"),
+                       ("Followup of Followup 3" , "Y")]
 
     mock = UserInputMocker(user_input_dict).patch(mocker)
     
@@ -27,10 +27,10 @@ def test_checklist_numerous_followups(mocker):
     assert mock.isSuccess()
 
 def test_checklist_nested_followups(mocker):
-    user_input_dict = {"Question 1" : "Y",
-                       "Followup 1" : "Y", 
-                       "Followup 2" : "Y", 
-                       "Followup 3" : "Y"}
+    user_input_dict = [("Question 1" , "Y"),
+                       ("Followup 1" , "Y"), 
+                       ("Followup 2" , "Y"), 
+                       ("Followup 3" , "Y")]
 
     mock = UserInputMocker(user_input_dict).patch(mocker)
     
