@@ -5,3 +5,4 @@ Pipfile.lock
 **/assets
 *.html
 **/.unotes
+*.pyc

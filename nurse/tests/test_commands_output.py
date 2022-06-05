@@ -7,7 +7,7 @@ def test_output_into_file(mocker):
     expected_archived_paths = ["a/b/c/echo_command.txt",
                                "b/c/d/python_command.txt"]
 
-    user_input_dict = {"Question 1" : "Y"}
+    user_input_dict = [("Question 1" , "Y")]
 
     mock = UserInputMocker(user_input_dict).patch(mocker)
 
@@ -44,7 +44,7 @@ def test_output_into_file(mocker):
 def test_output_into_file_and_inline(mocker):
     expected_archived_paths = ["b/c/d/python_command.txt"]
 
-    user_input_dict = {"Question 1" : "Y"}
+    user_input_dict = [("Question 1" , "Y")]
 
     mock = UserInputMocker(user_input_dict).patch(mocker)
 
