@@ -44,4 +44,4 @@ jobs:
     - name: Test with pytest
       if: steps.cache-dependencies.outputs.cache-hit != 'true'
       run: |
-        pipenv run pytest --html=report.html
+        pipenv --python=${{ matrix.python-version }} run pytest --html=report.html
