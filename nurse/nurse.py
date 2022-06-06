@@ -3,7 +3,6 @@
 import datetime
 import os
 import sys, traceback
-import pwd
 from zipfile import ZipFile
 import json
 import copy
