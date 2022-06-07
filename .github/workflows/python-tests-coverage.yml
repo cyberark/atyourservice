@@ -35,12 +35,12 @@ jobs:
     - name: Pytest coverage comment
       uses: MishaKav/pytest-coverage-comment@main
       with:
-        pytest-coverage-path: ./pytest-coverage.txt
-        junitxml-path: ./pytest.xml
+        pytest-coverage-path: nurse/pytest-coverage.txt
+        junitxml-path: nurse/pytest.xml
     - name: Pytest coverage comment
       uses: MishaKav/pytest-coverage-comment@main
       with:
-        pytest-coverage-path: ./pytest-coverage.txt
+        pytest-coverage-path: nurse/pytest-coverage.txt
         title: Coverage Report
         badge-title: Coverage Badge
         hide-badge: false
@@ -48,5 +48,5 @@ jobs:
         create-new-comment: false
         hide-comment: false
         report-only-changed-files: false
-        junitxml-path: ./pytest.xml
+        junitxml-path: nurse/pytest.xml
         junitxml-title: JUnit Xml Summary
