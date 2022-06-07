@@ -6,3 +6,6 @@ Pipfile.lock
 *.html
 **/.unotes
 *.pyc
+.coverage
+pytest.xml
+pytest-coverage.txt
