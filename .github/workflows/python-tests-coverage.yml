@@ -31,8 +31,8 @@ jobs:
     - name: Install dependencies and run pytest
       run: |
         pip install pipenv
-        pipenv --python ${{ matrix.python-version }} install --dev
         cd nurse
+        pipenv --python ${{ matrix.python-version }} install --dev
         pipenv run pytest --junitxml=pytest.xml --cov-report=term-missing:skip-covered --cov=. tests/ | tee pytest-coverage.txt
     - name: Pytest coverage comment
       uses: MishaKav/pytest-coverage-comment@main
