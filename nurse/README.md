@@ -7,8 +7,7 @@
 ╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝      ╚═══╝   ╚═╝
 ```
 
-[![Pytest](https://github.com/Danie1/atyourservice/actions/workflows/python-tests.yml/badge.svg)](https://github.com/Danie1/atyourservice/actions/workflows/python-tests.yml)
-![Auto Updating Coverage Badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/atyourservice/5e90d640f8c212ab7bbac38f72323f80/raw/pytest-coverage-comment__main.json)
+[![Pytest](https://github.com/cyberark/atyourservice/actions/workflows/python-tests.yml/badge.svg)](https://github.com/cyberark/atyourservice/actions/workflows/python-tests.yml)
 - - -
 
 `nurse.py` is a command-line tool to retrieve diagnostic information from user's environments with their consent.
