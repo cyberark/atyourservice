@@ -38,11 +38,6 @@ jobs:
       uses: MishaKav/pytest-coverage-comment@main
       with:
         pytest-coverage-path: nurse/pytest-coverage.txt
-        junitxml-path: nurse/pytest.xml
-    - name: Pytest coverage comment
-      uses: MishaKav/pytest-coverage-comment@main
-      with:
-        pytest-coverage-path: nurse/pytest-coverage.txt
         title: Coverage Report
         badge-title: Coverage Badge
         hide-badge: false
