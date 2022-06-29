@@ -30,13 +30,13 @@ class UserInputMocker(object):
         prompt = prompt.replace("-> ", "")
 
         # assert priority
-        expected_question = list(self.value.keys())[0]
+        expected_question = self.value[0][0]
         assert expected_question == prompt
 
-        user_answer = self.value[prompt]
+        user_answer = self.value[0][1]
 
         # it will not be called again
-        del self.value[prompt]
+        del self.value[0]
 
         return user_answer
 
